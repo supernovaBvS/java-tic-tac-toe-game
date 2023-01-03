@@ -26,21 +26,38 @@ public class main{
         while(true) {
             Scanner scan = new Scanner(System.in);
             System.out.println("enter your placement (1-9):");
-            int pos = scan.nextInt(); // input in python
-    
-            System.out.println(pos);
-    
-            placePiece(gameBoard, pos, "player");
+            int playerPos = scan.nextInt(); // input in python
+            while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions)){
+                System.out.println("position taken! enter different position");
+                playerPos = scan.nextInt();
+            }
+                
+            System.out.println(playerPos);
             
+            placePiece(gameBoard, playerPos, "player");
+            
+            String result = checkWinner();
+            if (result.length() >0) {
+                System.out.println(result);
+                break;
+            }
+
             Random rand = new Random();
             int cpuPos = rand.nextInt(9) + 1;
+            while(playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos)){
+                // System.out.println("position taken! enter different position");
+                cpuPos = rand.nextInt(9) + 1;
+            }
             placePiece(gameBoard, cpuPos, "cpu");
-    
+            
+            result = checkWinner();
+            if (result.length() >0) {
+                System.out.println(result);
+                break;
+            }
             printGameBoard(gameBoard);
-
-            String result = checkWinner();
-            System.out.println(result);
         }
+        printGameBoard(gameBoard);
 
     }
 
