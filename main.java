@@ -11,14 +11,14 @@ public class main{
     
     public static void main(String[] args){
 
-
         //2D arrays 3x3 for game board
 
         char[][] gameBoard = {{' ', '|', ' ', '|', ' '}, 
-        {'-', '+', '-', '+', '-'}, 
-        {' ', '|', ' ', '|', ' '}, 
-        {'-', '+', '-', '+', '-'}, 
-        {' ', '|', ' ', '|', ' '}};
+                              {'-', '+', '-', '+', '-'}, 
+                              {' ', '|', ' ', '|', ' '}, 
+                              {'-', '+', '-', '+', '-'}, 
+                              {' ', '|', ' ', '|', ' '}};
+
 
         printGameBoard(gameBoard);
 
