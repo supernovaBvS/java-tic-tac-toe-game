@@ -24,9 +24,9 @@ public class main{
 
         
         while(true) {
-            Scanner scan = new Scanner(System.in);
+            Scanner scan = new Scanner(System.in); // input in python
             System.out.println("enter your placement (1-9):");
-            int playerPos = scan.nextInt(); // input in python
+            int playerPos = scan.nextInt(); 
             while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions)){
                 System.out.println("position taken! enter different position");
                 playerPos = scan.nextInt();
